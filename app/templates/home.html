@@ -12,6 +12,14 @@
           <th>Current Job</th>
           <th>Email</th>
       </tr>
+      <!--
+      Pagination might be a cool feature for the app, to prevent listing too many
+      profiles in one go.
+
+      Some django pagination guides can be found here:
+      https://docs.djangoproject.com/en/3.0/topics/pagination/
+
+      -->
       {% for profile in profiles %}
       <tr>
           <td>{{ profile.first_name }}</td>
