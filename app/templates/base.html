@@ -2,26 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Ladies Get Coffee{% endblock %}</title>
+  <!--
+  To prevent he redundancy in declaring this title block, I would suggest
+  Just write out the Ladies get coffee tag and delete the block altogether
 
-  <style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-
-  </style>
+  -->
+  <title> Ladies Get Coffee</title>
+  <!--
+  Keep your styles in a separate static file for easy maintenance
+  -->
+  <link type="text/css" rel="stylesheet" href="../static/styles.css"/>
 
 </head>
 <body>
