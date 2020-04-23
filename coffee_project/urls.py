@@ -21,7 +21,8 @@ from app import views
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
-
+# api
+from django.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,4 +37,6 @@ urlpatterns = [
     # edit profile
     url(r'^edit_profile/$', views.edit_profile, name='edit_profile'),
 
+    # API
+    path('api/', include('app.urls')),
 ]

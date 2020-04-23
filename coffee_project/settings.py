@@ -25,13 +25,17 @@ SECRET_KEY = 'p6%1s2ajg-$2@0goxedy8fwxce_v18wpu-lfbgo&ptg$_*=c@^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+     '127.0.0.1', # localhost
+    'qcvault.herokuapp.com'  # Postman
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'app',
+    'rest_framework',
     # 'admin' after 'app' to have correct logout redirect (https://stackoverflow.com/questions/15467831/django-logout-redirects-me-to-administration-page)
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,10 +79,23 @@ WSGI_APPLICATION = 'coffee_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+ELEPHANT_PW = os.environ['ELEPHANT_PW']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dxzskojr',
+        'USER': 'dxzskojr',
+        'PASSWORD': ELEPHANT_PW,
+        'HOST': 'kandula.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
@@ -127,3 +144,6 @@ LOGIN_REDIRECT_URL = 'landing_page'
 
 # custom user model
 # AUTH_USER_MODEL = 'app.User'
+
+# Celery (&Rabbit MQ)
+CELERY_BROKER_URL = 'amqp://localhost'

@@ -1,2 +1,5 @@
 NOTES.md
-*.pyc 
+*.pyc
+.env
+coffee_project/stuff/
+db.sqlite3

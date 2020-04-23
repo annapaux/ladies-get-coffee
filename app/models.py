@@ -11,3 +11,19 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length = 50, default='', blank=True)
     email = models.CharField(max_length = 50, default='', blank=True)
     current_job = models.CharField(max_length = 50, default='', blank=True)
+
+    def __str__(self):
+        return self.user
+
+class Company(models.Model):
+    name = models.CharField(max_length = 50, null=False, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+
+class University(models.Model):
+    name = models.CharField(max_length = 250, null=False, db_index=True)
+
+    def __str__(self):
+        return self.name
