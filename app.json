@@ -1,0 +1,6 @@
+{
+  "name": "Ladies Get Coffee",
+  "description": "Networking platform for women.",
+  "image": "heroku/python",
+  "keywords": ["python", "django" ],
+}
