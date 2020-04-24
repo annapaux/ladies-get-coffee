@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>See all Messages</h2>
+
+    {% if threads %}
+        {% for other_user, messages in threads.items %}
+            <h3> Thread with {{ other_user }} </h3>
+            <form action="new_message" method="get">
+                {% csrf_token %}
+                <input type="submit" value="Message {{ other_user }}" />
+                <input type="hidden" name="receiving_user_id" value="{{ other_user.id }}">
+            </form>
+            {% for message in messages %}
+                <p> From {{ message.from_user }}: {{ message.text }} </p>
+            {% endfor %}
+
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

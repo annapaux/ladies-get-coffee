@@ -11,6 +11,7 @@
           <th>Last Name</th>
           <th>Current Job</th>
           <th>Email</th>
+          <th>Message</th>
       </tr>
       {% for profile in profiles %}
       <tr>
@@ -18,6 +19,13 @@
           <td>{{ profile.last_name }}</td>
           <td>{{ profile.current_job }}</td>
           <td>{{ profile.email }}</td>
+          <td>
+            <form action="messages/new_message" method="get">
+              {% csrf_token %}
+              <input type="hidden" name="receiving_user_id" value="{{ profile.user.id }}">
+              <button type="submit">Message</button>
+            </form>
+          </td>
       </tr>
       {% endfor %}
   </table>

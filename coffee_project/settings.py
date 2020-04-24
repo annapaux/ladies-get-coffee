@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'app',
     'rest_framework',
+    'messenger',
     # 'admin' after 'app' to have correct logout redirect (https://stackoverflow.com/questions/15467831/django-logout-redirects-me-to-administration-page)
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')),],
     },
 ]
 

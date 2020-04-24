@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Ladies Get Coffee{% endblock %}</title>
+  <title>Ladies Get Coffee</title>
 
   <style>
   table {
@@ -34,6 +34,8 @@
       <a href="{% url 'logout' %}">logout</a>
       or
       <a href="{% url 'edit_profile' %}">edit profile</a>
+      or
+      <a href="{% url 'view_messages' %}">messages</a>
     {% else %}
       <a href="{% url 'landing_page' %}">home</a>
       or

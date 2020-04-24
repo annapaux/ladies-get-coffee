@@ -15,28 +15,35 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 # imported views
-from app import views
+from app import views as app_views   # deleted to allow for more apps
 # import authentication
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
 # api
 from django.urls import include
+# messenger
+from messenger import views as messenger_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # home
-    url(r'^$', views.landing_page, name='landing_page'),
+    url(r'^$', app_views.landing_page, name='landing_page'),
     # authentication
     url(r'^login/$', auth_views.LoginView.as_view(), name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     # registration
-    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^signup/$', app_views.signup, name='signup'),
     # edit profile
-    url(r'^edit_profile/$', views.edit_profile, name='edit_profile'),
+    url(r'^edit_profile/$', app_views.edit_profile, name='edit_profile'),
 
     # API
     path('api/', include('app.urls')),
+
+    # messenger
+    url(r'^messages/$', messenger_views.view_messages, name='view_messages'),
+    url(r'^messages/new_message$', messenger_views.send_message, name='send_message'),
 ]
