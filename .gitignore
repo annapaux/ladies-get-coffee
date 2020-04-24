@@ -1,5 +1,4 @@
 NOTES.md
 *.pyc
-.env
 coffee_project/stuff/
 db.sqlite3
