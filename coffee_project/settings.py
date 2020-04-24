@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1', # localhost
     'qcvault.herokuapp.com',  # Postman
-    'dry-scrubland-49099.herokuapp.com',  # Heroku
+    'ladies-get-coffee.herokuapp.com',  # Heroku
 ]
 
 
