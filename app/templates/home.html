@@ -10,6 +10,8 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Current Job</th>
+          <th>Company</th>
+          <th>University</th>
           <th>Email</th>
           <th>Message</th>
       </tr>
@@ -18,6 +20,8 @@
           <td>{{ profile.first_name }}</td>
           <td>{{ profile.last_name }}</td>
           <td>{{ profile.current_job }}</td>
+          <td>{{ profile.company }}</td>
+          <td>{{ profile.university }}</td>
           <td>{{ profile.email }}</td>
           <td>
             <form action="messages/new_message" method="get">

@@ -35,3 +35,11 @@ What urls lead to what page (view) can be seen in the `coffee_project/urls.py` f
 Authentication happens with Django's built-in User profile and auth package. The base User only has a username and password. An additional model is the UserProfile, which saves the additional information (e.g. job, name) and the schema can be found in `app/models.py`, with a one-to-one foreign key to the user model.
 
 The current database is a simple Django built-in sqlite3 database.
+
+
+## Run Tests
+`python3 manage.py test`
+
+To specify an app: `python3 manage.py test app`
+
+To increase error messages: `python3 manage.py test --verbosity 2`
