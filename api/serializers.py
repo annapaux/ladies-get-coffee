@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.models import Company, University
+from api.models import Company, University
 
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

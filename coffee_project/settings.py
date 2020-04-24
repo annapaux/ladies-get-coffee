@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'app',
     'rest_framework',
     'messenger',
+    'api',
     # 'admin' after 'app' to have correct logout redirect (https://stackoverflow.com/questions/15467831/django-logout-redirects-me-to-administration-page)
     'django.contrib.admin',
     'django.contrib.auth',

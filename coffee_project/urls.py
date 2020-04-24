@@ -41,7 +41,7 @@ urlpatterns = [
     url(r'^edit_profile/$', app_views.edit_profile, name='edit_profile'),
 
     # API
-    path('api/', include('app.urls')),
+    path('api/', include('api.urls')),
 
     # messenger
     url(r'^messages/$', messenger_views.view_messages, name='view_messages'),
