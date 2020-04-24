@@ -2,3 +2,4 @@ NOTES.md
 *.pyc
 coffee_project/stuff/
 db.sqlite3
+.env

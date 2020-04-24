@@ -26,8 +26,9 @@ SECRET_KEY = 'p6%1s2ajg-$2@0goxedy8fwxce_v18wpu-lfbgo&ptg$_*=c@^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-     '127.0.0.1', # localhost
-    'qcvault.herokuapp.com'  # Postman
+    '127.0.0.1', # localhost
+    'qcvault.herokuapp.com',  # Postman
+    'dry-scrubland-49099.herokuapp.com',  # Heroku
 ]
 
 
