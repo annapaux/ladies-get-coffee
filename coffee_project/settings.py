@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # UML diagram
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
