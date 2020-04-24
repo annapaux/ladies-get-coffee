@@ -16,10 +16,15 @@ from django.contrib import messages
 from django.shortcuts import HttpResponseRedirect
 from app.models import UserProfile
 
+# for filter with negation
+from django.db.models import Q
+# >>> Entry.objects.filter(~Q(id = 3))
+
 
 def landing_page(request):
     if request.user.is_authenticated:
-        profiles = UserProfile.objects.all()
+        profiles = UserProfile.objects.filter(~Q(user=request.user))
+
         data = {'profiles':profiles}
         return render(request, "home.html", data)
     else:
